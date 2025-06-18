@@ -1,4 +1,4 @@
-#N canvas 733 172 450 300 12;
+#N canvas 733 172 683 486 12;
 #X obj 62 75 cnv 15 108 24 empty \$1-stateCanvas empty 20 12 0 14 #14e814 #fcfcfc 0;
 #N canvas 0 0 450 250 (subpatch) 0;
 #X array \$1-track 557052 float 2;
@@ -7,7 +7,7 @@
 #X obj 7 32 vsl 22 87 0 1 0 0 empty \$1-in+ empty 0 -9 0 10 #e4e4e4 #4d4d4d #373737 0 0;
 #X obj 36 32 vsl 14 87 0 1 0 0 empty empty empty 0 -8 0 10 #e4e4e4 #ff2000 #4d4d4d 0 1;
 #X obj 60 30 tgl 41 0 empty \$1-punch+ empty 0 -11 0 12 #fcfcfc #000000 #000000 0 1;
-#X obj 161 29 knob 42 -63 63 0 0 empty \$1-speed+ #E4E4E4 #B7B7B7 #4D4D4D 1 0 0 0 1 270 0 0 0;
+#X obj 161 29 knob 42 -63 63 0 0 empty \$1-speed+ #E4E4E4 #B7B7B7 #4D4D4D 1 0 0 0 1 270 0 0 0 empty empty 0 0 0 0 0 0 0 0;
 #X text 161 4 speed;
 #X obj 213 29 tgl 42 0 empty \$1-reverse+ empty 0 -11 0 12 #fcfcfc #000000 #000000 0 1;
 #X text 213 4 reverse;
@@ -17,7 +17,7 @@
 #X obj 312 29 bng 20 250 50 0 empty \$1-sync+ empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
 #X text 270 28 sync, f 5;
 #X text 270 3 clear;
-#X obj 7 148 knob 42 0 2 0 0 empty \$1-intens+ #E4E4E4 #B7B7B7 #4D4D4D 1 0 0 0 1 270 0 0 0;
+#X obj 7 148 knob 42 0 2 0 0 empty \$1-intens+ #E4E4E4 #B7B7B7 #4D4D4D 1 0 0 0 1 270 0 0 0 empty empty 0 0 0 0 0 0 0 0;
 #X text 7 126 intens;
 #X obj 6 251 outlet~;
 #X obj 6 218 sampler-abs \$1 \$2 \$3 \$4, f 65;
@@ -26,13 +26,13 @@
 #X obj 341 -43 f \$1;
 #X text 270 52 dur (s);
 #X text 110 4 play/rec;
-#X obj 349 259 loadmess set 1;
 #X obj 349 292 s \$1-intens+;
 #X floatatom 318 75 7 0 0 0 - \$1-spd+ - 12;
 #X text 270 74 speed;
 #X listbox 66 78 14 0 0 0 - \$1-state+ - 12;
 #X text 60 4 punch;
 #X text 7 4 in / out;
+#X obj 349 259 cyclone/loadmess set 1;
 #X connect 2 0 18 0;
 #X connect 4 0 18 1;
 #X connect 5 0 18 3;
@@ -46,5 +46,5 @@
 #X connect 18 2 9 0;
 #X connect 20 0 21 0;
 #X connect 21 0 19 0;
-#X connect 24 0 25 0;
+#X connect 30 0 24 0;
 #X coords 0 0 1 1 379 196 2 0 0;

@@ -1,0 +1,20 @@
+[Unit]
+Description=Démarrage de Klax
+After=network.target
+
+[Service]
+ExecStart=/boot/shared/klax/start_klax.sh
+WorkingDirectory=/boot/shared/klax/
+Restart=always
+User=klax
+
+[Install]
+WantedBy=multi-user.target
+
+
+# chmod +x /boot/shared/klax/start_klax.sh
+# /etc/systemd/system/klax.service
+# sudo systemctl daemon-reload
+# sudo systemctl enable klax
+# sudo systemctl start klax
+# journalctl -u klax -f

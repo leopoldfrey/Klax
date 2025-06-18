@@ -9,7 +9,7 @@ int previousPwmValues[4] = {0, 0, 0, 0};
 String inputString = "";
 bool stringComplete = false;
 
-const String DEVICE_ID = "Klax_1"; // Changez cette valeur pour chaque Arduino
+const String DEVICE_ID = "Klax_4"; // Changez cette valeur pour chaque Arduino
 
 #include "WiFiS3.h"
 //#include "ArduinoGraphics.h"
