@@ -11,6 +11,8 @@ from pythonosc.udp_client import SimpleUDPClient
 
 CONFIG_FILE = "config.json"
 
+debug = True
+
 def load_config(path):
     if not os.path.exists(path):
         print(f"Fichier de configuration '{path}' introuvable.")
@@ -24,13 +26,14 @@ def midi_callback(event, data=None):
         channel = (message[0] & 0x0F) + 1
         controller_number = message[1]
         controller_value = message[2]
-        print(f"CC - Channel: {channel}, Control: {controller_number}, Value: {controller_value}")
+        if debug:
+            print(f"CC - Channel: {channel}, Control: {controller_number}, Value: {controller_value}")
         data.send_message("/midi", [channel, controller_number, controller_value])
 
 def choose_midi_input(port_index):
     midiin = rtmidi.MidiIn()
     ports = midiin.get_ports()
-    print(ports)
+    #print(ports)
 
     if not ports:
         print("Aucun port MIDI disponible.")
@@ -76,6 +79,7 @@ def main():
     midi_port_index = config.get("midi_port_index", 0)
     osc_ip = config.get("osc_ip", "127.0.0.1")
     osc_port = config.get("osc_port", 8000)
+    debug = config.get("debug", False)
 
     osc_client = SimpleUDPClient(osc_ip, osc_port)
     if midi_port_name:
