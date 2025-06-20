@@ -1,7 +1,8 @@
 {
-  "midi_port_name": "Launch Control XL",
-  "midi_port_index": 0,
+  "midi_in_port_name": "Launch Control XL",
+  "midi_out_port_name": "Launch Control XL",
   "osc_ip": "127.0.0.1",
-  "osc_port": 9000,
+  "osc_out_port": 9000,
+  "osc_in_port": 9001,
   "debug": false
 }
