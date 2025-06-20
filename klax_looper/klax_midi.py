@@ -5,6 +5,7 @@
 import rtmidi
 import json
 import sys
+import time
 import os
 from pythonosc.udp_client import SimpleUDPClient
 
@@ -86,7 +87,7 @@ def main():
     print(f"Envoi OSC vers {osc_ip}:{osc_port} - Ctrl+C pour quitter.")
     try:
         while True:
-            pass
+            time.sleep(0.01)
     except KeyboardInterrupt:
         print("Arret...")
     finally:
