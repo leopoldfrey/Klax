@@ -29,6 +29,7 @@ def midi_callback(event, data=None):
 def choose_midi_input(port_index):
     midiin = rtmidi.MidiIn()
     ports = midiin.get_ports()
+    print(ports)
 
     if not ports:
         print("Aucun port MIDI disponible.")
@@ -82,12 +83,12 @@ def main():
         midiin = choose_midi_input(midi_port_index)
     midiin.set_callback(lambda msg, _: midi_callback(msg, osc_client))
 
-    print(f"Envoi OSC vers {osc_ip}:{osc_port} — Ctrl+C pour quitter.")
+    print(f"Envoi OSC vers {osc_ip}:{osc_port} - Ctrl+C pour quitter.")
     try:
         while True:
             pass
     except KeyboardInterrupt:
-        print("Arrêt...")
+        print("Arret...")
     finally:
         midiin.close_port()
         del midiin
