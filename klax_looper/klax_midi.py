@@ -45,15 +45,41 @@ def choose_midi_input(port_index):
             print(f"{i}: {p}")
         exit(1)
 
+def choose_midi_input_by_name(port_name):
+    def normalize(s):
+        return s.lower().replace(" ", "").replace("-", "")
+    midiin = rtmidi.MidiIn()
+    ports = midiin.get_ports()
+
+    if not ports:
+        print("Aucun port MIDI disponible.")
+        exit(1)
+
+    for i, name in enumerate(ports):
+        if normalize(port_name) in normalize(name):
+            midiin.open_port(i)
+            print(f"Port MIDI sélectionné (nom): {name}")
+            return midiin
+
+    print(f"Port MIDI avec le nom '{port_name}' introuvable.")
+    print("Ports disponibles :")
+    for i, p in enumerate(ports):
+        print(f"{i}: {p}")
+    exit(1)
+
 def main():
     config = load_config(CONFIG_FILE)
 
+    midi_port_name = config.get("midi_port_name")
     midi_port_index = config.get("midi_port_index", 0)
     osc_ip = config.get("osc_ip", "127.0.0.1")
     osc_port = config.get("osc_port", 8000)
 
     osc_client = SimpleUDPClient(osc_ip, osc_port)
-    midiin = choose_midi_input(midi_port_index)
+    if midi_port_name:
+        midiin = choose_midi_input_by_name(midi_port_name)
+    else:
+        midiin = choose_midi_input(midi_port_index)
     midiin.set_callback(lambda msg, _: midi_callback(msg, osc_client))
 
     print(f"Envoi OSC vers {osc_ip}:{osc_port} — Ctrl+C pour quitter.")
