@@ -1,7 +1,9 @@
 #!/bin/bash
 
+export DISPLAY=:0
+
 # Aller dans le dossier de l'app
-cd /boot/shared/klax
+cd /home/klax/Documents/GitHub/Klax/klax_looper
 
 # Activer l'environnement virtuel
 source venv/bin/activate
