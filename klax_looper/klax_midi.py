@@ -11,7 +11,6 @@ from pythonosc.udp_client import SimpleUDPClient
 
 CONFIG_FILE = "config.json"
 
-debug = True
 
 def load_config(path):
     if not os.path.exists(path):
@@ -73,13 +72,14 @@ def choose_midi_input_by_name(port_name):
     exit(1)
 
 def main():
+    global debug
     config = load_config(CONFIG_FILE)
 
     midi_port_name = config.get("midi_port_name")
     midi_port_index = config.get("midi_port_index", 0)
     osc_ip = config.get("osc_ip", "127.0.0.1")
     osc_port = config.get("osc_port", 8000)
-    debug = config.get("debug", False)
+    debug = config.get("debug", True)
 
     osc_client = SimpleUDPClient(osc_ip, osc_port)
     if midi_port_name:
