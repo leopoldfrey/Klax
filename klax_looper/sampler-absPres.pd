@@ -1,8 +1,8 @@
 #N canvas 733 172 683 486 12;
 #X obj -1 -1 cnv 15 45 113 empty \$1-stateCanvas empty 20 12 0 14 #14e814 #fcfcfc 0;
 #N canvas 0 0 450 250 (subpatch) 0;
-#X array \$1-track 176400 float 4;
-#X coords 0 1.1 176399 -0.1 310 83 1;
+#X array \$1-track 352800 float 4;
+#X coords 0 1.1 352799 -0.1 310 83 1;
 #X restore 362 28 graph;
 #X obj 307 30 vsl 22 77 0 1 0 0 \$1-indisp++ \$1-in++ empty 0 -9 0 10 #e4e4e4 #4d4d4d #373737 0 0;
 #X obj 335 30 vsl 20 77 0 1 0 0 empty \$1-out++ empty 0 -8 0 10 #e4e4e4 #ff2000 #4d4d4d 0 1;

@@ -1,0 +1,14 @@
+#N canvas 530 120 449 239 10;
+#X obj 86 37 inlet;
+#X obj 86 164 outlet;
+#X obj 86 134 *;
+#X obj 181 105 samplerate~;
+#X obj 184 75 bng 19 250 50 0 empty empty empty 17 7 0 10 #dfdfdf #000000 #000000;
+#X obj 184 48 receive pd-dsp-started;
+#X obj 181 139 / 1000;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 2 1;

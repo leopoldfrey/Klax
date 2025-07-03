@@ -806,9 +806,9 @@
 #X obj 7 701 sampler-absPres 7 38 6 30;
 #X msg 912 762 \; pd dsp 1 \; glob-bpm 120;
 #X obj 1025 821 s max-len;
-#X obj 1025 791 else/ms2samps;
 #X msg 1025 762 300000;
 #X text 790 87 TODO: length per track / décrochage speed / retour led /resync length, f 15;
+#X obj 1025 791 ms2samps2;
 #X connect 0 0 3 0;
 #X connect 1 0 7 0;
 #X connect 4 0 16 0;
@@ -824,7 +824,7 @@
 #X connect 20 0 24 11 32.................hB....L...fn.....C...Xd....;
 #X connect 20 0 24 3;
 #X connect 21 0 40 0;
-#X connect 21 0 43 0;
+#X connect 21 0 42 0;
 #X connect 23 0 24 2;
 #X connect 23 0 24 10;
 #X connect 25 0 1 0;
@@ -840,6 +840,6 @@
 #X connect 37 0 0 0;
 #X connect 39 0 24 6;
 #X connect 39 0 24 14;
-#X connect 42 0 41 0;
-#X connect 43 0 42 0;
+#X connect 42 0 44 0;
+#X connect 44 0 41 0;
 #X coords 0 0 1 1 1075 976 0;
