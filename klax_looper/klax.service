@@ -1,8 +1,10 @@
 [Unit]
 Description=Demarrage de Klax
-After=network.target
+After=network-online.target sound.target
+Wants=network-online.target sound.target
 
 [Service]
+ExecStartPre=/bin/sleep 10
 ExecStart=/home/klax/Documents/GitHub/Klax/klax_looper/start_klax.sh
 WorkingDirectory=/home/klax/Documents/GitHub/Klax/klax_looper/
 Restart=always
