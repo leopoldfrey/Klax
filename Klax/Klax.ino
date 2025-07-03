@@ -2,14 +2,14 @@
  xxx[0] controls '1' outputs
  xxx[1] controls '2' outputs */
 int pwmpin[4] = { 5, 6, 9, 10 };    // PWM input
-int inApin[4] = { 7, 4, 11, 8 };    // INA: Clockwise input
+int inApin[4] = { 4, 7, 8, 11 };    // INA: Clockwise input
 int pwmValues[4] = { 0, 0, 0, 0 };  // Stocke les valeurs PWM
 int previousPwmValues[4] = {0, 0, 0, 0};
 
 String inputString = "";
 bool stringComplete = false;
 
-const String DEVICE_ID = "Klax_4"; // Changez cette valeur pour chaque Arduino
+const String DEVICE_ID = "Klax_1"; // Changez cette valeur pour chaque Arduino
 
 #include "WiFiS3.h"
 //#include "ArduinoGraphics.h"

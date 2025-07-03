@@ -53,7 +53,7 @@
      showgrid="false"
      showguides="false"
      inkscape:zoom="0.71651204"
-     inkscape:cx="736.20535"
+     inkscape:cx="561.05128"
      inkscape:cy="590.35993"
      inkscape:window-width="1469"
      inkscape:window-height="1022"
@@ -2991,7 +2991,13 @@ SettingsUrl short: https://boxes.hackerspace-bamberg.de/ElectronicsBox?FingerJoi
          style="font-style:normal;font-weight:normal;font-size:8.46667px;line-height:125%;text-align:center;letter-spacing:0;word-spacing:0;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          id="tspan4523"
          x="213.75758"
-         y="-211.64369">92.18mm</tspan></text></g><rect
+         y="-211.64369">92.18mm</tspan></text><rect
+       style="fill:#42cfdf;fill-opacity:1;stroke-width:1;stroke-linecap:round;stop-color:#000000"
+       id="rect2788"
+       width="122"
+       height="36"
+       x="-55.044064"
+       y="202.686" /></g><rect
      style="display:none;fill:none;stroke:#ff0000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
      id="rect3256"
      width="300"
