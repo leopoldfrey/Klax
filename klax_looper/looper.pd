@@ -412,7 +412,7 @@
 #X connect 153 0 152 0;
 #X restore 788 821 pd midi;
 #X obj 7 237 sampler-absPres 3 34 2 26;
-#N canvas 607 381 1029 618 sendOSC 0;
+#N canvas 607 381 1029 618 sendOSC 1;
 #X obj 369 135 i;
 #X obj 329 574 tgl 19 0 empty empty empty 0 -8 0 10 #dfdfdf #000000 #000000 0 1;
 #X text 355 572 <-- connection status;
@@ -572,10 +572,13 @@
 #X msg 1634 507 connect 10.0.0.14 8000;
 #X obj 30 377 loadbang;
 #X obj 30 410 del 5000;
-#X obj 30 447 button 25 25 228 228 228 77 77 77 0;
+#X obj 30 447 button 25 25 228 228 228 77 77 77 2;
 #X obj 152 604 print Klax_5_connected;
 #X text 64 449 connect;
 #X text 64 284 connect;
+#X msg 2607 216 connect \$1 8000, f 16;
+#X obj 2607 185 cyclone/tosymbol;
+#X obj 2607 249 print KLAX5;
 #X connect 0 0 39 0;
 #X connect 1 0 17 0;
 #X connect 3 0 35 0;
@@ -626,6 +629,7 @@
 #X connect 40 1 51 0;
 #X connect 40 2 85 0;
 #X connect 40 3 87 0;
+#X connect 40 4 164 0;
 #X connect 41 0 31 0;
 #X connect 47 0 48 0;
 #X connect 48 0 16 0;
@@ -740,6 +744,9 @@
 #X connect 159 0 81 0 32.................R....fT...fD....HE...LB....;
 #X connect 159 0 150 0 32.................S....bIA..vD....WR...LB....;
 #X connect 159 0 97 0 32.................R....rI...fD....aB...LB....;
+#X connect 163 0 165 0;
+#X connect 163 0 96 0;
+#X connect 164 0 163 0;
 #X restore 7 953 pd sendOSC;
 #X obj 876 528 else/bpm -samps;
 #X obj 699 25 declare -path cyclone -path else;
